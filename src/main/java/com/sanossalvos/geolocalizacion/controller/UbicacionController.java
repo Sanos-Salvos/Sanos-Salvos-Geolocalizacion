@@ -17,6 +17,7 @@ public class UbicacionController {
 
     @PostMapping("/registrar")
     public ResponseEntity<Ubicacion> registrar(@RequestBody UbicacionDTO dto) {
+        // Ahora el nombre 'guardar' coincide con el del Service
         return ResponseEntity.ok(service.guardar(dto));
     }
 }
