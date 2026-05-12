@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UbicacionProducer {
+
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public UbicacionProducer(KafkaTemplate<String, String> kafkaTemplate) {
@@ -12,6 +13,7 @@ public class UbicacionProducer {
     }
 
     public void enviarEventoUbicacion(String mensaje) {
-        kafkaTemplate.send("UbicacionRegistrada", mensaje);
+
+        this.kafkaTemplate.send("UbicacionRegistrada", mensaje);
     }
 }
