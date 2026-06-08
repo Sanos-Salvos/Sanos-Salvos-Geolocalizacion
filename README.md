@@ -1,36 +1,33 @@
-﻿# 🏥 Sanos-Salvos-Geolocalizacion
+﻿# Sanos-Salvos-Geolocalizacion
 
-Servicio de ubicación y geolocalización
+Servicio de ubicacion y geolocalizacion
 
 ## Puerto
-\\\
+
 8085
-\\\
 
 ## Base de datos
-\\\
+
 geolocalizacion_db
-\\\
 
-## Endpoints
-\\\
-/api/ubicaciones
-\\\
+## Endpoints disponibles
 
-## Ejecución
+GET /api/ubicaciones
+POST /api/ubicaciones
+GET /api/ubicaciones/{id}
 
-### Docker
-\\\ash
+## Ejecucion con Docker
+
 docker-compose up --build
-\\\
 
-### Manual
-\\\ash
+## Ejecucion manual
+
 mvn spring-boot:run
-\\\
 
-## Stack
+## Tecnologias
+
 - Java 21
 - Spring Boot 3.2
+- Spring Security + JWT
 - PostgreSQL
 - Docker
