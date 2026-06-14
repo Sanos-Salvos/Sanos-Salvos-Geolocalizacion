@@ -6,6 +6,7 @@ import com.sanossalvos.geolocalizacion.factory.IUbicacionFactory;
 import com.sanossalvos.geolocalizacion.model.Ubicacion;
 import com.sanossalvos.geolocalizacion.producer.UbicacionProducer;
 import com.sanossalvos.geolocalizacion.repository.UbicacionRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +20,6 @@ public class UbicacionServiceImpl implements IUbicacionService {
     private final IUbicacionFactory factory;
     private final UbicacionProducer producer;
 
-
     public UbicacionServiceImpl(UbicacionRepository repository, MapaExternoClient mapaClient,
                                 IUbicacionFactory factory, UbicacionProducer producer) {
         this.repository = repository;
@@ -27,6 +27,7 @@ public class UbicacionServiceImpl implements IUbicacionService {
         this.factory = factory;
         this.producer = producer;
     }
+
     @Override
     public List<UbicacionDTO> listarTodas() {
         return repository.findAll().stream()
@@ -44,28 +45,29 @@ public class UbicacionServiceImpl implements IUbicacionService {
     public void eliminar(Long id) {
         repository.deleteById(id);
     }
+
     @Override
+    @CircuitBreaker(name = "mapasCB", fallbackMethod = "fallbackGuardar")
     public UbicacionDTO guardar(UbicacionDTO dto) {
-
-        try {
-            List<Map<String, Object>> res = mapaClient.buscarCoordenadas(dto.getDireccion() + ", " + dto.getCiudad());
-            if (res != null && !res.isEmpty()) {
-                dto.setLatitud(Double.parseDouble(res.get(0).get("lat").toString()));
-                dto.setLongitud(Double.parseDouble(res.get(0).get("lon").toString()));
-            }
-        } catch (Exception e) {
-            System.err.println("Error al obtener coordenadas: " + e.getMessage());
+        List<Map<String, Object>> res = mapaClient.buscarCoordenadas(dto.getDireccion() + ", " + dto.getCiudad());
+        if (res != null && !res.isEmpty()) {
+            dto.setLatitud(Double.parseDouble(res.get(0).get("lat").toString()));
+            dto.setLongitud(Double.parseDouble(res.get(0).get("lon").toString()));
         }
+        return procesarYGuardar(dto);
+    }
+    public UbicacionDTO fallbackGuardar(UbicacionDTO dto, Throwable t) {
+        System.err.println("Alerta: API externa de mapas caída o lenta. Aplicando plan B. Motivo: " + t.getMessage());
+        dto.setLatitud(0.0);
+        dto.setLongitud(0.0);
 
+        return procesarYGuardar(dto);
+    }
 
+    private UbicacionDTO procesarYGuardar(UbicacionDTO dto) {
         Ubicacion entidad = factory.crearEntidad(dto);
-
-
         Ubicacion guardada = repository.save(entidad);
-
-
         producer.enviarEventoUbicacion("Nueva ubicación para mascota ID: " + guardada.getMascotaId());
-
 
         return factory.crearDTO(guardada);
     }

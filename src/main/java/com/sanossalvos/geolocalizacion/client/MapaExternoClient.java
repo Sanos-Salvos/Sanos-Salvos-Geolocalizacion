@@ -9,7 +9,6 @@ import java.util.Map;
 
 @FeignClient(name = "mapaExterno", url = "https://nominatim.openstreetmap.org")
 public interface MapaExternoClient {
-
-    @GetMapping("/search?format=json")
+    @GetMapping(value = "/search?format=json", headers = "User-Agent=SanosYSalvosApp/1.0 (contacto@sanossalvos.com)")
     List<Map<String, Object>> buscarCoordenadas(@RequestParam("q") String query);
 }

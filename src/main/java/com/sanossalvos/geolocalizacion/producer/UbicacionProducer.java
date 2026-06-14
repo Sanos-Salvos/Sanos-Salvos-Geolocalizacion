@@ -13,7 +13,6 @@ public class UbicacionProducer {
     }
 
     public void enviarEventoUbicacion(String mensaje) {
-
-        this.kafkaTemplate.send("UbicacionRegistrada", mensaje);
+        this.kafkaTemplate.send("ubicacion-registrada", mensaje);
     }
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/geolocalizacion")
+@CrossOrigin(origins = "*")
 public class UbicacionController {
 
     private final IUbicacionService service;
@@ -16,13 +17,11 @@ public class UbicacionController {
     public UbicacionController(IUbicacionService service) {
         this.service = service;
     }
-
-    @PostMapping("/registrar")
+    @PostMapping
     public ResponseEntity<UbicacionDTO> registrar(@RequestBody UbicacionDTO dto) {
         return ResponseEntity.ok(service.guardar(dto));
     }
-
-    @GetMapping("/listar")
+    @GetMapping
     public ResponseEntity<List<UbicacionDTO>> listar() {
         return ResponseEntity.ok(service.listarTodas());
     }
@@ -31,9 +30,7 @@ public class UbicacionController {
     public ResponseEntity<UbicacionDTO> obtenerPorId(@PathVariable Long id) {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
-
-
-    @DeleteMapping("/eliminar/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         service.eliminar(id);
         return ResponseEntity.ok("Ubicación eliminada correctamente");
