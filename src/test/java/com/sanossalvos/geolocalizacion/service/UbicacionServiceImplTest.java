@@ -61,7 +61,7 @@ class UbicacionServiceImplTest {
 
     @Test
     void guardar_conCoordenadasExternas_deberiaGuardarYRetornarDTO() {
-        // Arrange
+
         Map<String, Object> mapaResultado = new HashMap<>();
         mapaResultado.put("lat", "-33.4489");
         mapaResultado.put("lon", "-70.6693");
@@ -71,10 +71,8 @@ class UbicacionServiceImplTest {
         when(repository.save(any(Ubicacion.class))).thenReturn(ubicacion);
         when(factory.crearDTO(any(Ubicacion.class))).thenReturn(dto);
 
-        // Act
         UbicacionDTO resultado = service.guardar(dto);
 
-        // Assert
         assertNotNull(resultado);
         assertEquals(-33.4489, resultado.getLatitud());
         assertEquals(-70.6693, resultado.getLongitud());
@@ -84,91 +82,75 @@ class UbicacionServiceImplTest {
 
     @Test
     void guardar_sinResultadosDeMapa_deberiaGuardarSinCoordenadasExternas() {
-        // Arrange
+
         when(mapaClient.buscarCoordenadas(anyString())).thenReturn(Collections.emptyList());
         when(factory.crearEntidad(any(UbicacionDTO.class))).thenReturn(ubicacion);
         when(repository.save(any(Ubicacion.class))).thenReturn(ubicacion);
         when(factory.crearDTO(any(Ubicacion.class))).thenReturn(dto);
 
-        // Act
         UbicacionDTO resultado = service.guardar(dto);
 
-        // Assert
         assertNotNull(resultado);
         verify(repository).save(any(Ubicacion.class));
     }
 
     @Test
-    void guardar_cuandoMapaFalla_deberiaGuardarSinCoordenadas() {
-        // Arrange
+    void guardar_cuandoMapaFalla_deberiaLanzarExcepcion() {
         when(mapaClient.buscarCoordenadas(anyString())).thenThrow(new RuntimeException("API down"));
-        when(factory.crearEntidad(any(UbicacionDTO.class))).thenReturn(ubicacion);
-        when(repository.save(any(Ubicacion.class))).thenReturn(ubicacion);
-        when(factory.crearDTO(any(Ubicacion.class))).thenReturn(dto);
 
-        // Act
-        UbicacionDTO resultado = service.guardar(dto);
-
-        // Assert
-        assertNotNull(resultado);
-        verify(repository).save(any(Ubicacion.class));
+        assertThrows(RuntimeException.class, () -> {
+            service.guardar(dto);
+        });
+        verify(repository, never()).save(any(Ubicacion.class));
     }
 
     @Test
     void listarTodas_deberiaRetornarListaDTOs() {
-        // Arrange
+
         when(repository.findAll()).thenReturn(List.of(ubicacion));
         when(factory.crearDTO(any(Ubicacion.class))).thenReturn(dto);
 
-        // Act
         List<UbicacionDTO> resultado = service.listarTodas();
 
-        // Assert
         assertEquals(1, resultado.size());
         verify(repository).findAll();
     }
 
     @Test
     void listarTodas_cuandoVacia_deberiaRetornarListaVacia() {
-        // Arrange
+
         when(repository.findAll()).thenReturn(Collections.emptyList());
 
-        // Act
         List<UbicacionDTO> resultado = service.listarTodas();
 
-        // Assert
         assertTrue(resultado.isEmpty());
     }
 
     @Test
     void buscarPorId_existente_deberiaRetornarDTO() {
-        // Arrange
+
         when(repository.findById(1L)).thenReturn(Optional.of(ubicacion));
         when(factory.crearDTO(ubicacion)).thenReturn(dto);
 
-        // Act
         UbicacionDTO resultado = service.buscarPorId(1L);
 
-        // Assert
+
         assertNotNull(resultado);
         assertEquals(10L, resultado.getMascotaId());
     }
 
     @Test
     void buscarPorId_noExistente_deberiaLanzarExcepcion() {
-        // Arrange
+
         when(repository.findById(99L)).thenReturn(Optional.empty());
 
-        // Act & Assert
         assertThrows(RuntimeException.class, () -> service.buscarPorId(99L));
     }
 
     @Test
     void eliminar_deberiaEliminarPorId() {
-        // Act
         service.eliminar(1L);
 
-        // Assert
         verify(repository).deleteById(1L);
     }
 }
