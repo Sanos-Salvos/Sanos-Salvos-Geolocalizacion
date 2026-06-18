@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ead3f10-379f-4620-bb2d-d55a81b90cbc" name="Changes" comment="Final final&#10;&#10;agregamos mapa gratuito">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/sanossalvos/geolocalizacion/GeolocalizacionApplicationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/sanossalvos/geolocalizacion/producer/UbicacionProducerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
@@ -13,6 +15,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="35" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,11 +29,23 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Final" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JxseDiaz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sanos-Salvos/Sanos-Salvos-Geolocalizacion.git&quot;,
+    &quot;accountId&quot;: &quot;6986663f-5379-472c-92da-055372d53a85&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -38,6 +55,10 @@
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -53,41 +74,116 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.geolocalizacion [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.geolocalizacion [package].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.GeolocalizacionApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/victo/OneDrive/Documentos/GitHub/Sanos-Salvos-Geolocalizacion&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in geolocalizacion.executor": "Coverage",
+    "JUnit.GeolocalizacionApplicationTest.executor": "Coverage",
+    "JUnit.UbicacionControllerTest.executor": "Coverage",
+    "JUnit.UbicacionFactoryImplTest.executor": "Coverage",
+    "JUnit.UbicacionProducerTest.executor": "Coverage",
+    "JUnit.UbicacionServiceImplTest.executor": "Coverage",
+    "Maven.geolocalizacion [clean].executor": "Run",
+    "Maven.geolocalizacion [package].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.GeolocalizacionApplication (1).executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feature/errores",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/victo/OneDrive/Documentos/GitHub/Sanos-Salvos-Geolocalizacion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="JUnit.All in geolocalizacion">
+    <configuration name="All in geolocalizacion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="geolocalizacion" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeolocalizacionApplicationTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="geolocalizacion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sanossalvos.geolocalizacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sanossalvos.geolocalizacion" />
+      <option name="MAIN_CLASS_NAME" value="com.sanossalvos.geolocalizacion.GeolocalizacionApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeolocalizacionApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="geolocalizacion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sanossalvos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sanossalvos" />
+      <option name="MAIN_CLASS_NAME" value="com.sanossalvos.GeolocalizacionApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UbicacionProducerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="geolocalizacion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sanossalvos.geolocalizacion.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sanossalvos.geolocalizacion.producer" />
+      <option name="MAIN_CLASS_NAME" value="com.sanossalvos.geolocalizacion.producer.UbicacionProducerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UbicacionServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="geolocalizacion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sanossalvos.geolocalizacion.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sanossalvos.geolocalizacion.service" />
+      <option name="MAIN_CLASS_NAME" value="com.sanossalvos.geolocalizacion.service.UbicacionServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GeolocalizacionApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="geolocalizacion" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sanossalvos.geolocalizacion.GeolocalizacionApplication" />
@@ -95,6 +191,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in geolocalizacion" />
+        <item itemvalue="JUnit.GeolocalizacionApplicationTest (1)" />
+        <item itemvalue="JUnit.GeolocalizacionApplicationTest" />
+        <item itemvalue="JUnit.UbicacionServiceImplTest" />
+        <item itemvalue="JUnit.UbicacionProducerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -116,6 +221,9 @@
       <workItem from="1778558364548" duration="4066000" />
       <workItem from="1778704828797" duration="125000" />
       <workItem from="1778705230391" duration="57000" />
+      <workItem from="1781461540162" duration="19000" />
+      <workItem from="1781495863005" duration="434000" />
+      <workItem from="1781722010002" duration="1449000" />
     </task>
     <servers />
   </component>
@@ -150,5 +258,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Final final&#10;&#10;agregamos mapa gratuito" />
     <option name="LAST_COMMIT_MESSAGE" value="Final final&#10;&#10;agregamos mapa gratuito" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sanos_Salvos_Geolocalizacion$UbicacionFactoryImplTest.ic" NAME="UbicacionFactoryImplTest Coverage Results" MODIFIED="1781723855581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.sanossalvos.geolocalizacion.factory.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sanos_Salvos_Geolocalizacion$All_in_geolocalizacion.ic" NAME="All in geolocalizacion Coverage Results" MODIFIED="1781723576364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Sanos_Salvos_Geolocalizacion$UbicacionServiceImplTest.ic" NAME="UbicacionServiceImplTest Coverage Results" MODIFIED="1781724023698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.sanossalvos.geolocalizacion.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sanos_Salvos_Geolocalizacion$UbicacionProducerTest.ic" NAME="UbicacionProducerTest Coverage Results" MODIFIED="1781723902455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.sanossalvos.geolocalizacion.producer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sanos_Salvos_Geolocalizacion$GeolocalizacionApplicationTest.ic" NAME="GeolocalizacionApplicationTest Coverage Results" MODIFIED="1781724103149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.sanossalvos.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sanos_Salvos_Geolocalizacion$UbicacionControllerTest.ic" NAME="UbicacionControllerTest Coverage Results" MODIFIED="1781723844209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.sanossalvos.geolocalizacion.controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

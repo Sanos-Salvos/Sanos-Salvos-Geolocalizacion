@@ -1,14 +1,14 @@
-package com.sanossalvos;
+package com.sanossalvos.geolocalizacion;
 
-import com.sanossalvos.geolocalizacion.GeolocalizacionApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest(classes = GeolocalizacionApplication.class)
-class GeolocalizacionApplicationTests {
+@ActiveProfiles("test")
+class GeolocalizacionApplicationTest {
 
 	@Test
 	void contextLoads() {
 	}
-
 }
